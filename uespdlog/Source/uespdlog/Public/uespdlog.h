@@ -3,10 +3,17 @@
 #pragma once
 
 #include "Modules/ModuleManager.h"
+
+#include "Windows/AllowWindowsPlatformAtomics.h"
+#include "Windows/AllowWindowsPlatformTypes.h"
+
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_sinks.h"
 #include <memory>
 #include "spdlog/logger.h"
+
+#include "Windows/HideWindowsPlatformTypes.h"
+#include "Windows/HideWindowsPlatformAtomics.h"
 
 DECLARE_LOG_CATEGORY_EXTERN(LogSpdLog, All, All);
 
@@ -27,7 +34,7 @@ public:
 	* @return       TSharedPtr<spdlog::logger, ESPMode::ThreadSafe>
 	* How it works: 
 	*/
-	inline static TSharedPtr<spdlog::logger, ESPMode::ThreadSafe> CreateLogger();
+	static TSharedPtr<spdlog::logger, ESPMode::ThreadSafe> CreateLogger();
 	/**
 	* By:           Daniel "Pan" Lott
 	* Method:       Getspdlog
@@ -37,7 +44,7 @@ public:
 	* How it works: 
 	* Returns the spdlog for other classes to directly call if needed
 	*/
-	inline static TSharedPtr<spdlog::logger, ESPMode::ThreadSafe> GetUnrealSpeedLog();
+	static TSharedPtr<spdlog::logger, ESPMode::ThreadSafe> GetUnrealSpeedLog();
 
 	/**
 	* By:           Daniel "Pan" Lott

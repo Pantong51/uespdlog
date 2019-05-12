@@ -19,8 +19,8 @@
 // Upon destruction, logs all remaining messages in the queue before
 // destructing..
 
-#include "common.h"
-#include "logger.h"
+#include "spdlog/common.h"
+#include "spdlog/logger.h"
 
 #include <chrono>
 #include <memory>

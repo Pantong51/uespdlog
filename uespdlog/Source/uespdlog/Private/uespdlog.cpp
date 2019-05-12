@@ -2,7 +2,12 @@
 
 #include "uespdlog.h"
 #include "Core.h"
+
 #include "Modules/ModuleManager.h"
+
+#include "Windows/AllowWindowsPlatformAtomics.h"
+#include "Windows/AllowWindowsPlatformTypes.h"
+
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
 #include "Interfaces/IPluginManager.h"
@@ -11,13 +16,15 @@
 #include "spdlog/common.h"
 #include "spdlog/sinks/rotating_file_sink.h"
 
+#include "Windows/HideWindowsPlatformTypes.h"
+#include "Windows/HideWindowsPlatformAtomics.h"
+
 #define LOCTEXT_NAMESPACE "FuespdlogModule"
 
 DEFINE_LOG_CATEGORY(LogSpdLog);
 
 void FuespdlogModule::StartupModule()
 {
-	//InitLog();
 	spdlog::flush_every(std::chrono::seconds(5));
 	UnrealSpeedLog.Get()->info("Created Logger");
 }

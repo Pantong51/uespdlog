@@ -14,7 +14,6 @@ enum class EUESpdLogLogLevel : uint8
 	Critical UMETA(DisplayName = "Critical"),
 	Debug UMETA(DisplayName = "Debug"),
 	Warn UMETA(DisplayName = "Warn"),
-
 };
 
 UCLASS()

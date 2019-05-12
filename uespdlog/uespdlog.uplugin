@@ -10,20 +10,18 @@
 	"DocsURL": "",
 	"MarketplaceURL": "",
 	"SupportURL": "",
-	"CanContainContent": true,
+	"EngineVersion": "4.22.0",
+	"CanContainContent": false,
 	"IsBetaVersion": true,
-	"Installed": false,
-  "Modules": 
-  [
-    {
-      "Name": "uespdlog",
-      "Type": "Runtime",
-      "LoadingPhase": "Default",
-      "WhitelistPlatforms": 
-      [
-        "Win64",
-        "Win32"
-      ]
-    }
-  ]
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "uespdlog",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"WhitelistPlatforms": [
+				"Win64"
+			]
+		}
+	]
 }
